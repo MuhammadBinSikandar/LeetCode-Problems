@@ -15,12 +15,9 @@ public:
             return head;
         }
         ListNode* curr = head;
-        ListNode* temp;
-        while(curr!=NULL){
-            if(curr->next!= NULL && curr->val==curr->next->val){
-                temp = curr->next;
+        while(curr->next!=NULL){
+            if(curr->val==curr->next->val){
                 curr->next = curr->next->next;
-                delete temp;
             }else{
                 curr=curr->next;
             }
