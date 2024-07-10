@@ -15,10 +15,12 @@ public:
         ListNode *dummy= new ListNode(-1, head);
         ListNode* curr = dummy;
         while(curr!=NULL){
-            while(curr->next!=NULL && curr->next->val == val){
+            if(curr->next!=NULL && curr->next->val == val){
                 curr->next = curr->next->next;
+            }else{
+                curr=curr->next;
             }
-            curr=curr->next;
+            
         }
         return dummy->next;
     }
